@@ -102,15 +102,17 @@ function run_check() {
     log_info "Checking NAP managed identity configuration..."
     
     # Check if NAP is enabled
-    nap_enabled=$(echo $CLUSTER_JSON | jq -r '.properties.nodeResourceGroupProfile.restrictScaleSetToVnet // false')
+    # Note: Replace with actual NAP detection property when API is stable
+    nap_enabled=$(echo $CLUSTER_JSON | jq -r '.properties.nodeProvisioningProfile.mode // "Manual"')
     
-    if [[ "$nap_enabled" != "true" ]]; then
+    if [[ "$nap_enabled" != "Auto" ]]; then
         log_info "NAP is not enabled on this cluster"
         return 0
     fi
     
     # Future: Check for user-assigned identities when supported
-    # ...
+    # This is placeholder code - the actual implementation will depend on
+    # Microsoft's API design when this feature becomes available
     
     return 2  # Warning until feature is GA
 }
