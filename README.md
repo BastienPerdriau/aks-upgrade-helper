@@ -143,6 +143,10 @@ aks-upgrade-helper/
 └── s/                        # Staging directory for outputs (used by ADO pipeline)
 ```
 
+## Additional Documentation
+
+- [NAP (Node Auto Provisioning) and User-Assigned Managed Identity Support](docs/NAP_MANAGED_IDENTITY_FINDINGS.md) - Research findings on attaching user-assigned managed identities to NAP-provisioned nodes
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request with new checks or improvements.
